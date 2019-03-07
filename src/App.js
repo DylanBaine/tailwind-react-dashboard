@@ -1,28 +1,84 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './includes/Header';
+import SideBar from './includes/SideBar';
+import Body from './includes/Body';
+import Container from './components/Container';
+import Row from './components/Row';
+import Column from './components/Column';
+import Card from './components/Card';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+export default class App extends React.Component {
+    headerCards = [
+        {
+            title: '327 Followers',
+            active: true,
+        },
+        {
+            title: '191 Posts',
+        },
+        {
+            title: 'Comments',
+            titleIcon: 'lock',
+        },
+        {
+            title: 'Likes',
+            titleIcon: 'lock',
+        }
+    ];
+    constructor() {
+        super();
+        this.state = {
+            sideBar: false,
+            headerCards: this.headerCards 
+        };
+    }
+    getActiveCard() {
+        return this.state.headerCards.find(card => card.active == true);
+    }
+    selectCard(card) {
+        const { headerCards } = this.state;
+        const index = headerCards.indexOf(card);
+        this.setState({
+            headerCards: headerCards.map((original, key) => {
+                return {
+                    ...original,
+                    active: key == index ? true : false,
+                };
+            }),
+        });
+    }
+    render() {
+        return (
+            <div id="app-container">
+                <SideBar showing={this.state.sideBar} />
+                <Body>
+                    <Header onChangeSidebar={() => this.setState({ sideBar: !this.state.sideBar })} />
+                    <Container>
+                        <div className="mb-4">
+                            <Row>
+                                {
+                                    this.state.headerCards.map(card => {
+                                        return (
+                                            <Column key={card.title} className="text-center" width="25%">
+                                                <Card
+                                                    className={`cursor-pointer ${!card.active ? 'hover:shadow-md' : ''} ${card.active ? 'shadow-lg' : ''}`}
+                                                    onClick={() => this.selectCard(card)}
+                                                    titleIcon={card.titleIcon} title={card.title}
+                                                >
+                                                    Last 24 Hours <i className="fa fa-tag"></i>
+                                                </Card>
+                                            </Column>
+                                        ) 
+                                    })
+                                }
+                            </Row>
+                        </div>
+                        <div>
+                            {this.getActiveCard().title}
+                        </div>
+                    </Container>
+                </Body>
+            </div >
+        );
+    }
 }
-
-export default App;
