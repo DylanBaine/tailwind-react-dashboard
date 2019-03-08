@@ -61,7 +61,7 @@ export default class App extends React.Component {
                                         return (
                                             <Column key={card.title} className="text-center" width="25%">
                                                 <Card
-                                                    className={`cursor-pointer ${!card.active ? 'hover:shadow-md' : ''} ${card.active ? 'shadow-lg' : ''}`}
+                                                    className={`cursor-pointer ${card.active ? 'shadow-lg' : 'hover:shadow-md'}`}
                                                     onClick={() => this.selectCard(card)}
                                                     titleIcon={card.titleIcon} title={card.title}
                                                 >
