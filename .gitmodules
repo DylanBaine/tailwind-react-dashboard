@@ -1,3 +1,3 @@
-[submodule "build"]
-	path = build
+[submodule "DylanBaine.github.io"]
+	path = DylanBaine.github.io
 	url = https://github.com/DylanBaine/DylanBaine.github.io.git
