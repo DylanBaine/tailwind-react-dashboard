@@ -60,3 +60,14 @@ a {
 .menu-button {
     cursor: pointer;
 }
+
+.chip {
+    padding: 3px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.chip.success {
+    color: white;
+    background-color: #088608;
+}

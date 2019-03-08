@@ -33,7 +33,7 @@ export default class App extends React.Component {
         };
     }
     getActiveCard() {
-        return this.state.headerCards.find(card => card.active == true);
+        return this.state.headerCards.find(card => card.active === true);
     }
     selectCard(card) {
         const { headerCards } = this.state;
@@ -42,7 +42,7 @@ export default class App extends React.Component {
             headerCards: headerCards.map((original, key) => {
                 return {
                     ...original,
-                    active: key == index ? true : false,
+                    active: key === index ? true : false,
                 };
             }),
         });
