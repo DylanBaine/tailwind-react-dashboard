@@ -5,7 +5,7 @@ export default class List extends React.Component {
 
     render() {
         return (
-            <ul class="list m-0 p-0 w-full">
+            <ul class="list m-0 p-0 w-full m-0">
                 {
                     this.props.items.map((item, i) => {
                         return (
