@@ -25,7 +25,10 @@ export default class Header extends React.Component {
                     title={this.state.menuIcon === 'fa-times' ? 'Close Menu' : 'Open Menu'}
                     className={`menu-button fa ${this.state.menuIcon}`}
                 ></i>
-                <h2 className="ml-3">Profile Performance</h2>
+                <h2 className="ml-3 mr-3">Profile Performance</h2>
+                <div>
+                    <a href="https://github.com/DylanBaine/tailwind-react-dashboard">See the code!</a>
+                </div>
             </div>
         );
     }

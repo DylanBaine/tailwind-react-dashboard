@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './includes/Header';
 import SideBar from './includes/SideBar';
-import Body from './includes/Body';
+import Body from './components/Body';
 import Container from './components/Container';
 import Row from './components/Row';
 import Column from './components/Column';
@@ -29,7 +29,7 @@ export default class App extends React.Component {
         super();
         this.state = {
             sideBar: false,
-            headerCards: this.headerCards 
+            headerCards: this.headerCards
         };
     }
     getActiveCard() {
@@ -68,7 +68,7 @@ export default class App extends React.Component {
                                                     Last 24 Hours <i className="fa fa-tag"></i>
                                                 </Card>
                                             </Column>
-                                        ) 
+                                        )
                                     })
                                 }
                             </Row>
