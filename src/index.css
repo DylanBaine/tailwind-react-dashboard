@@ -4,11 +4,19 @@ body {
 }
 
 #header {
-    height: 5vh;
+    height: 60px;
     border-bottom: solid 1px lightgrey;
     display: flex;
     align-items: center;
     padding: 0 10px;
+}
+.sidebar-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-bottom: solid 1px lightgrey;
 }
 
 #app-container {
@@ -16,7 +24,7 @@ body {
 }
 
 #sidebar {
-    height: 95vh;
+    height: 100vh;
     border-right: solid 1px lightgrey;
     transition: all .3s;
     overflow: hidden;
@@ -29,14 +37,6 @@ body {
 }
 .sidebar-closed {
     width: 70px;
-}
-.sidebar-header {
-    height: 5vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    border-bottom: solid 1px lightgrey;
 }
 
 .avatar {
